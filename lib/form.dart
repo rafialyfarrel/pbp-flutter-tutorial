@@ -20,6 +20,18 @@ class _MyFormPageState extends State<MyFormPage> {
   List<String> listKelasPBP = ['A', 'B', 'C', 'D', 'E', 'F', 'KI'];
   bool _nilaiSwitch = false;
 
+  String Jenjang() {
+      if (jenjangSarjana) {
+        return 'Sarjana';
+      } else if (jenjangDiploma) {
+        return 'Diploma';
+      } else if (jenjangMagister) {
+        return 'Magister';
+      } else {
+        return 'Doktor';
+      }
+    }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +58,6 @@ class _MyFormPageState extends State<MyFormPage> {
               onTap: () {
                 // Route menu ke halaman form
                 Navigator.pop(context);
-                // Navigator.pushReplacement(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => const MyFormPage()),
-                // );
               },
             ),
           ],
@@ -257,6 +265,23 @@ class _MyFormPageState extends State<MyFormPage> {
                                         Text(
                                           "Umur: $umur",
                                           style: TextStyle(color: Colors.blue),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          "Kelas: $kelasPBP",
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          "Jenjang: " + Jenjang(),
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
                                         ),
                                       ],
                                     ),
