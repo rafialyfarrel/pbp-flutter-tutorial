@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab06/form.dart';
-
+import 'package:lab06/page/form.dart';
+import 'package:lab06/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,16 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
     title: Text(widget.title),
   ),
-  // Menambahkan drawer menu
-  drawer: Drawer(
+  drawer: Drawer( // Menambahkan drawer menu
       child: Column(
         children: [
-          // Menambahkan clickable menu
-          ListTile(
+          ListTile( // Menambahkan clickable menu
             title: const Text('Counter'),
             onTap: () {
-              // Route menu ke halaman utama
-              Navigator.pushReplacement(
+              Navigator.pushReplacement( //route menu ke halaman utama
                 context,
                 MaterialPageRoute(builder: (context) => const MyFormPage()),
               );
@@ -63,10 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ListTile(
             title: const Text('Form'),
             onTap: () {
-              // Route menu ke halaman form
-              Navigator.pushReplacement(
+              Navigator.pushReplacement( //route menu ke halaman form
                 context,
                 MaterialPageRoute(builder: (context) => const MyFormPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('To Do'),
+            onTap: () {
+              Navigator.pushReplacement( //route menu ke halaman to do
+                context,
+                MaterialPageRoute(builder: (context) => const ToDoPage()),
               );
             },
           ),
